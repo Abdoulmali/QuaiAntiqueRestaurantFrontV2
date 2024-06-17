@@ -19,12 +19,26 @@ function validateForm(){
   const prenomOK = validateRequired(InputPrenom);
   const mailOk = validateMail(InputEmail);
   const passwordOk = ValidatePassword(InputPassword);
+  const passwordConfirmOk = validateConfirmationPassword(InputPassword, InputValidatePassword);
 
-  if(nomOK && prenomOK && mailOk && passwordOk){
+  if(nomOK && prenomOK && mailOk && passwordOk && passwordConfirmOk){
     btnValidation.disabled = false;
   }
   else{
     btnValidation.disabled = true;
+  }
+}
+
+function validateConfirmationPassword(InputPwd, inputConfirmPwd){
+  if(InputPassword.value == inputConfirmPwd.value){
+    inputConfirmPwd.classList.add("is-valid");
+    inputConfirmPwd.classList.remove("is-invalid");
+    return true;
+  }
+  else{
+    inputConfirmPwd.classList.add("is-invalid");
+    inputConfirmPwd.classList.remove("is-valid");
+    return false;
   }
 }
 
