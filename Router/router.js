@@ -34,7 +34,7 @@ const LoadContentPage = async () => {
   // Ajout du contenu JavaScript
   if (actualRoute.pathJS != "") {
     // Création d'une balise script
-    var scriptTag = document.createElement("script");
+    let scriptTag = document.createElement("script");
     scriptTag.setAttribute("type", "text/javascript");
     scriptTag.setAttribute("src", actualRoute.pathJS);
 
@@ -44,6 +44,9 @@ const LoadContentPage = async () => {
 
   // Changement du titre de la page
   document.title = actualRoute.title + " - " + websiteName;
+
+  // Afficher et masquer les éléments en fonction du rôle
+  showAndHideElementsForRoles();
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)

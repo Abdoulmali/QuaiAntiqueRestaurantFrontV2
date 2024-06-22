@@ -14,6 +14,7 @@ const token = "bdzhdvjvvhvhjlioiuudaupvvvjhjnlkjl";
 setToken(tokenCookieName);
     // placer ce token en cookies
 
+    setCookie(RoleCookieName, "admin", 7);
     window.location.replace("/");
 
   }
