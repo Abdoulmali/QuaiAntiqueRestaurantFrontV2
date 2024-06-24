@@ -8,7 +8,8 @@ function checkCredentials(){
   //Ici il faudra appeler l'API pour vérifier les credentials en BDD
 
   if(mailInput.value == "test@mail.com" && passwordInput.value == "123"){
-
+    alert("Vous êtes connecté");
+    
     // Il faudra récupérer le vrai token 
 const token = "bdzhdvjvvhvhjlioiuudaupvvvjhjnlkjl";
 setToken(tokenCookieName);
