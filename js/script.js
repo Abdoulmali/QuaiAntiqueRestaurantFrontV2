@@ -55,12 +55,6 @@ function isConnected() {
   }
 }
 
-if (isConnected()) {
-  alert("Je suis connecté");
-} else {
-  alert("Je ne suis pas connecté");
-}
-
 /*
 discnnected
 connected (admi ou client)

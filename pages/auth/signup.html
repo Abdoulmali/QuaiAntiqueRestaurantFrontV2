@@ -5,14 +5,14 @@
 </div>
 
 <div class="container">
-  <form>
+  <form id="formulaireInscription">
     <div class="mb-3">
       <label for="NameInput" class="form-label">Nom</label>
       <input
         type="text"
         class="form-control"
         id="NameInput"
-        placeholder="Nom"
+        placeholder="Nom" name="nom"
       />
       <div class="invalid-feedback">
         Le nom est requis
@@ -24,7 +24,7 @@
         type="text"
         class="form-control"
         id="PrenomInput"
-        placeholder="Prenom"
+        placeholder="Prenom" name="prenom"
       />
       <div class="invalid-feedback">
         Le prénom est requis
@@ -36,14 +36,14 @@
         type="email"
         class="form-control"
         id="EmailInput"
-        placeholder="test@mail.com"
+        placeholder="test@mail.com" name="email"
       />
       <div class="invalid-feedback">
         Le mail n'est pas au bon format
     </div>
     <div class="mb-3">
       <label for="PasswordInput" class="form-label">Mot de passe</label>
-      <input type="password" class="form-control" id="PasswordInput" />
+      <input type="password" class="form-control" id="PasswordInput" name="mdp" />
       <div class="invalid-feedback">
         Le mot de passe n'est pas assez robuste : Au moins 8 caractères,
         comprenant au moins 1 lettre majuscule, 1 minuscule, 1 chiffre, et 1
@@ -64,7 +64,7 @@
     </div>
     <div class="text-center">
       <button
-        type="submit"
+        type="button"
         class="btn btn-primary"
         id="btn-validation-inscription"
       >

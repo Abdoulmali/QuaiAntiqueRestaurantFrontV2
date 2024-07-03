@@ -6,12 +6,15 @@ const InputEmail = document.getElementById("EmailInput");
 const InputPassword = document.getElementById("PasswordInput");
 const InputValidatePassword = document.getElementById("ValidatePasswordInput");
 const btnValidation = document.getElementById("btn-validation-inscription");
+const formInscription = document.getElementById("formulaireInscription");
 
 inputNom.addEventListener("keyup", validateForm);
 InputPrenom.addEventListener("keyup", validateForm);
 InputEmail.addEventListener("keyup", validateForm);
 InputPassword.addEventListener("keyup", validateForm);
 InputValidatePassword.addEventListener("keyup", validateForm);
+
+btnValidation.addEventListener("click", InscrireUtilisateur);
 
 //Function permettant de valider tout le formulaire
 function validateForm(){
@@ -85,4 +88,42 @@ function validateRequired(input){
     input.classList.add("is-invalid");
     return false;
   }
+}
+
+function InscrireUtilisateur(){
+  let dataForm = new FormData(formInscription);
+
+  let name = dataForm.get("name");
+  
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  const raw = JSON.stringify({
+    "firstName": dataForm.get("nom"),
+    "lastName": dataForm.get("prenom"),
+    "email": dataForm.get("email"),
+    "password": dataForm.get("mdp")
+  });
+  
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  fetch("https://127.0.0.1:8000/api/registration", requestOptions)
+    .then((response) => {
+      if(response.ok){
+        return response.json();
+      }
+      else{
+        alert("erreur lors de l'inscription");
+      }
+    })
+    .then((result) => {
+      alert("Bravo" + dataForm.get("prenom") + ", vous êtes maintenent inscrit, vous pouvez vous connecter.")
+      document.location.href="/signin";
+    })
+    .catch((error) => console.error(error));
 }
