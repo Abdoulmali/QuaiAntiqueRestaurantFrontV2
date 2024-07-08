@@ -12058,4 +12058,39 @@ p {
   display: block;
   color: black;
   padding: 10px;
+}
+
+.item-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-menu p {
+  font-family: "Hind Madurai", serif;
+  font-size: 20px;
+}
+.item-menu .menu {
+  background-color: #392c1e;
+  width: 100%;
+}
+.item-menu .carte {
+  background-color: #b6ac97;
+  width: 100%;
+}
+
+.button {
+  margin-bottom: 20px;
+}
+
+.carte {
+  background-color: rgb(192, 186, 186);
+}
+.carte .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.carte .menu .contenu-menu {
+  padding-top: 20px;
 }/*# sourceMappingURL=main.css.map */

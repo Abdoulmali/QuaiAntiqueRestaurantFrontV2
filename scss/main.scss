@@ -107,7 +107,34 @@ p {
 .item-menu{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-family: $font-family-serif;
+    font-size: 20px;
+  }
   .menu{
-    background-color: red;
+    background-color:$dark;
+    width: 100%;
+  }
+  .carte{
+    background-color: $secondary;
+    width: 100%;
+  }
+}
+
+.button{
+  margin-bottom: 20px;
+  }
+
+.carte{
+  background-color:rgb(192, 186, 186);
+  .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .contenu-menu{
+      padding-top: 20px;
+    }
   }
 }
