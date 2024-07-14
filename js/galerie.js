@@ -1,7 +1,9 @@
 const galerieImage = document.getElementById("allImage");
 
+
 //Récupérer les informations des images
 let monImage = getImage("titre", "../image/chef.jpg");
+
 
 
 galerieImage.innerHTML = monImage;
@@ -15,7 +17,7 @@ function sanitizeHtml(text){
 function getImage(titre, urlImage){
   titre = sanitizeHtml(titre);
   titre = sanitizeHtml(urlImage);
-  return   ` <div class="col p-3">
+  return   ` <div class=row row-cols-2 row-cols-lg-3">
       <div class="image-card text-white">
         <img src="${urlImage}" class="rounded w-100" />
         <p class="titre-image">${titre}</p>
